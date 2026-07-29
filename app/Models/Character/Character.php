@@ -81,16 +81,16 @@ class Character extends Model
      */
     public static $createRules = [
         'character_category_id' => 'required',
-        'rarity_id' => 'required',
-        'user_id' => 'nullable',
-        'number' => 'required',
-        'slug' => 'required|alpha_dash',
-        'description' => 'nullable',
-        'sale_value' => 'nullable',
-        'image' => 'required|mimes:jpeg,jpg,gif,png|max:20000',
-        'thumbnail' => 'nullable|mimes:jpeg,jpg,gif,png|max:20000',
-        'owner_url' => 'url|nullable',
-        'gender'    => 'nullable',
+        'rarity_id'             => 'required',
+        'user_id'               => 'nullable',
+        'number'                => 'required',
+        'slug'                  => 'required|alpha_dash',
+        'description'           => 'nullable',
+        'sale_value'            => 'nullable|decimal:0,2',
+        'image'                 => 'required|mimes:jpeg,jpg,gif,png|max:2048',
+        'thumbnail'             => 'nullable|mimes:jpeg,jpg,gif,png|max:2048',
+        'owner_url'             => 'url|nullable',
+        'gender'                => 'nullable',
     ];
 
     /**
@@ -100,11 +100,13 @@ class Character extends Model
      */
     public static $updateRules = [
         'character_category_id' => 'required',
-        'number' => 'required',
-        'slug' => 'required',
-        'description' => 'nullable',
-        'sale_value' => 'nullable',
-        'gender'    => 'nullable',
+        'number'                => 'required',
+        'slug'                  => 'required',
+        'description'           => 'nullable',
+        'sale_value'            => 'nullable|decimal:0,2',
+        'image'                 => 'nullable|mimes:jpeg,jpg,gif,png|max:2048',
+        'thumbnail'             => 'nullable|mimes:jpeg,jpg,gif,png|max:2048',
+        'gender'                => 'nullable',
     ];
 
     /**

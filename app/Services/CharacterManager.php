@@ -1276,9 +1276,10 @@ class CharacterManager extends Service
             }
 
             // Update the character's profile
-            if(!$character->is_myo_slot) 
+            if(!$character->is_myo_slot) {
                 $character->name = $data['name'];
                 $character->gender = $data['gender'];
+            }
             $character->save();
 
             if(!$character->is_myo_slot && Config::get('lorekeeper.extensions.character_TH_profile_link')) $character->profile->link = $data['link'];
