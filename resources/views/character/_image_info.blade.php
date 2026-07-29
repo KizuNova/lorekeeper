@@ -31,6 +31,12 @@
 
             {{-- Basic info  --}}
             <div class="tab-pane fade show active" id="info-{{ $image->id }}">
+                @if ($character->gender)
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-4"><h5>Gender</h5></div>
+                    <div class="col-lg-8 col-md-6 col-8">{!! $character->gender !!}</div>
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-4"><h5>Species</h5></div>
                     <div class="col-lg-8 col-md-6 col-8">{!! $image->species_id ? $image->species->displayName : 'None' !!}</div>

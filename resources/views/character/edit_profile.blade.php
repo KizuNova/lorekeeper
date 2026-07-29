@@ -21,9 +21,15 @@
 
 {!! Form::open(['url' => $character->url . '/profile/edit']) !!}
 @if(!$character->is_myo_slot)
-    <div class="form-group">
-        {!! Form::label('name', 'Name') !!}
-        {!! Form::text('name', $character->name, ['class' => 'form-control']) !!}
+    <div class="row">
+        <div class="form-group col-6">
+            {!! Form::label('name', 'Name') !!}
+            {!! Form::text('name', $character->name, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group col-6">
+            {!! Form::label('gender', 'Gender') !!} <i class="fas fa-genderless" data-toggle="tooltip" title="The characters preferred gender/pronoun. This does not influence breeding and is only for profile information"></i> 
+            {!! Form::text('gender', $character->gender, ['class' => 'form-control']) !!}
+        </div>
     </div>
     @if(Config::get('lorekeeper.extensions.character_TH_profile_link'))
         <div class="form-group">
