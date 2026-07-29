@@ -33,7 +33,7 @@
             <div class="tab-pane fade show active" id="info-{{ $image->id }}">
                 @if ($character->gender)
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-4"><h5>Gender</h5></div>
+                    <div class="col-lg-4 col-md-6 col-4"><h5>Gender <span><i class="fas fa-genderless" data-toggle="tooltip" title="The characters preferred gender"></i></span></h5></div>
                     <div class="col-lg-8 col-md-6 col-8">{!! $character->gender !!}</div>
                 </div>
                 @endif
